@@ -17,7 +17,7 @@
 13. Usuarios y Permisos
 14. Que sigue después de aprendar a usar la terminal
 
-### 1.Qué es la terminal y para qué sirve
+### 1. Qué es la terminal y para qué sirve
 
 - Bienvenido al curso de terminal y línea de comandos. En este curso aprenderás una serie de tips y hacks que te van a ayudar a manejar la terminal como si no existiera una interfaz gráfica. La línea de comandos te permite hacer de todo: configuraciones, editar texto, compilar código y utilizar las herramientas que existen dentro de tu sistema operativo.
 
@@ -31,8 +31,6 @@
 
 - ls /usr/bin | wc -l
 
-2.Árbol de directorios y navegación
-
 ## 2. Árbol de directorios y navegación
 
 ### Comandos arbol de directorios
@@ -41,7 +39,37 @@
 
 - ls -l
 
+- pwd = presente directorio
+
+- cd nombre-del-file = ir a ese direcrorio o file
+
+- cd .
+
+- cd .. = subir de directorio
+
+- ~ = ir a home
+
+- cd ~ = ir a home
+
+- cd = ir a home
+
 ## 3. Manipulación y modificación del árbol de directorios
+
+### Comandos clase 3
+
+- touch filename.ext = si no existe lo va crear en blanco
+
+- clear = limpiar pantalla
+
+- control + l = limpiar pantalla
+
+- mkdir folder-name = crear una carpeta
+
+- ls -lh
+
+- cambiar nombre = mv pruebas tests
+
+- mv directorio-actual directorio-nuevo-nombre
 
 ## 4. Herramientas básicas
 
