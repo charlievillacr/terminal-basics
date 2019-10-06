@@ -57,27 +57,74 @@
 
 ### Comandos clase 3
 
-- touch filename.ext = si no existe lo va crear en blanco
+1. touch filename.ext = si no existe lo va crear en blanco
+2. clear = limpiar pantalla
+3. control + l = limpiar pantalla
+4. commando + k = limpiar pantalla
+5. mkdir folder-name = crear una carpeta
+6. ls -lh
+7. cambiar nombre = mv pruebas tests
+8. mv directorio-actual directorio-nuevo-nombre
+9. rm borarr de forma definitiva
+10. rm -r = borrar directorios y contenidos
+11. man = manual entry
+12. mv file-name dir-name/
+13. cp = copy
+14. crp filename.ext ../\ = folder actual y el de arriba
+15. ls -l .. = listar el directorio siguiente
+16. cp file-name.ext ~/src/git/whatever/ = elegir dir
+17. pwd = present working directory
+18. pushd ~/sites/terminal-platzi/sandbox = elegir directorio local
 
-- clear = limpiar pantalla
+### Notas del profe
 
-- control + l = limpiar pantalla
-
-- mkdir folder-name = crear una carpeta
-
-- ls -lh
-
-- cambiar nombre = mv pruebas tests
-
-- mv directorio-actual directorio-nuevo-nombre
+1. mkdir: crea un directorio
+2. touch: crea un archivo. Si no existe el archivo lo va a crear, y si existe - le cambia la fecha de modificación
+3. mv: mueve un archivo, te ayuda a modificarlo
+4. rm: elimina archivos o links, no funciona para eliminar un directorio, para esto necesitas un poco más
+5. rm -rf: elimina un directorio recursivamente
+6. man: es el manual de la terminal, puedes utilizarlo cuando tu quieras para entender qué hace un comando y sus banderas. Con espacio pasas una página, - con b te regresas una página y con q sales del manual.
+7. cp: copia un archivo a otros directorios
+pushd y popd: te permiten navegar entre dos directorios fácilmente.
 
 ## 4. Herramientas básicas
 
+1. more: te da las primeras líneas de lo que hay en el archivo. Para ver la siguiente página hacemos lo mismo que con el man, utilizamos espacio para
+2. cat: imprime todo el contenido de un archivo en pantalla.
+3. tail: te muestra las últimas 10 líneas de un archivo. Puedes agregarle un número con el - y pedir más que 10 líneas.
+
 ## 5. Variables y entorno
+
+- Cada vez que abrimos la terminal en realidad se está ejecutando un programa que se llama .bash_profile que es una serie de comandos que da de alta unas variables.
+
+- Todos los ejecutables tienen una serie de permisos. Cada vez que tengo un nuevo programa tengo que asegurarme
+
+### Comandos variables y entorno
+
+- alias: ejecuta una serie de comandos que le pasas antes, funciona para crear variables.
 
 ## 6. Streams
 
+- El diagrama que ves en pantalla consiste en un input y en un output. Nosotros pasamos unos datos que son procesados y que luego se devuelven de alguna forma. Cuando nosotros enviamos datos, eso es STDIN (standard input), después de eso se ejecuta un script y finalmente hay dos opciones de respuesta STDOUT (standard output) o STDERR (standard error). Es importante entender esto, sobre todo porque es fundamental saber cuándo estás teniendo un error dentro de un proceso.
+
+- En el ejercicio verás cómo corre un programa en php que identifica cuáles números son y no son múltiplos del número que ingresas. Ahí verás dos tipos de salida: STDOUT que arrojará los múltiplos y STDERR que arrojará los números que no son múltiplos del número que ingreses. Cada salida se podrá enviar a un archivo diferente y se podrá concatenar con las respuestas si ingresas un número nuevo. Además veremos cómo enviar los dos tipos de salida al mismo lugar.
+
 ## 7. Procesos de terminal
+
+- Cada vez que ejecutamos algo en nuestra computadora es un proceso que está registrado de alguna forma. El orden en que esto se ejecuta y la cercanía del procesador son muy importantes para las prioridades que se le va a dar a dicho proceso.
+
+- En esta clase vas a aprender a revisar, manipular y matar los procesos que corren dentro de tu computadora.
+
+### Comandos de procesos de terminal
+
+1. top muestra todos los procesos del equipo
+2. PID ID del proceso
+3. O para que te ordene por una categoría
+4. kill -9 mata un proceso
+5. & manda un proceso a background
+6. ; encadena los comandos para cuando termine el primero ejecuta el segundo
+7. ps -wA te da una lista de los procesos que se están ejecutando
+8. uptime te dice el tiempo que ha estado prendido
 
 ## 8. Power Tools - Comandos poderosos de búsqueda
 
