@@ -128,11 +128,33 @@ pushd y popd: te permiten navegar entre dos directorios fácilmente.
 
 ## 8. Power Tools - Comandos poderosos de búsqueda
 
+### Commandos de búsqueda
+
+<!-- Grep: Herramienta que nos ayuda a buscar cadenas carácteres. -->
+
+- grep file.ext -4 Comedy
+
+- grep file.ext -4 Comedy | wc -l = Cuantas?
+
+- find . -name *.php -type f
+
+- find . -name *.php -type f
+
+- find . -name *pl
+
+- ls *jpg
+
+- ls -lh *php
+
+- find . -name *php
+
+- wc -l resultados
+
 ## 9. Power Tools: curl, zip y tar
 
 ## 10. Pipe
 
-## 11. Crontab - Una herramienta para automatizat tareas de la terminal
+## 11. Crontab - Una herramienta para automatizar tareas de la terminal
 
 ## 12. Links
 
