@@ -152,6 +152,20 @@ pushd y popd: te permiten navegar entre dos directorios fácilmente.
 
 ## 9. Power Tools: curl, zip y tar
 
+<!-- Linx browser para terminal -->
+
+## Curl command
+
+- curl
+
+- curl https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat
+
+- Va internet trae el archivo, manda las cookies y solo lo imprime en pantall
+
+- curl https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat > aeropuertos.csv
+
+- Descarga el file y lo guarda como un .csv
+
 ## 10. Pipe
 
 ## 11. Crontab - Una herramienta para automatizar tareas de la terminal
