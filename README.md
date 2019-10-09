@@ -156,7 +156,7 @@ pushd y popd: te permiten navegar entre dos directorios fácilmente.
 
 ## Curl command
 
-- curl
+- curl: emula un navegador. No es un browser como tal, hay uno para terminal pero este solo emula los requests (peticiones) y los trae.
 
 - curl https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat
 
@@ -165,6 +165,62 @@ pushd y popd: te permiten navegar entre dos directorios fácilmente.
 - curl https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat > aeropuertos.csv
 
 - Descarga el file y lo guarda como un .csv
+
+- ls -lh *csv
+
+- lista y da detalla de los files con cvs en el nombre
+
+- curl https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat -o airports.csv
+
+## Comando "zip"
+
+- zip: agrega o reemplaza las entradas de un archivo zip de la lista, que puede incluir el nombre especial para comprimir la entrada.
+
+- zip varioscsvs.zip *csv
+
+- ls -lh *csv*
+
+- mostrar todos los que terminan en asterísco csv
+
+- unzip -vl varioscsvs.zip
+
+- Lista en pantalla, pero no descomprime
+
+<!-- https://platzi.com/clases/1276-terminal/11192-power-tools-curl-zip-y-tar/ -->
+
+## Comando tar
+
+- Es un comando similar a zip, junta varios archivos en uno solo sin comprimirlos. Después se le dicta un algoritmo de compresión, que es zip.
+
+- Uso => tar cfz varioscsvs.tar.gz *csv
+
+## Comando cat | awk
+
+- Uso => cat peliculas.csv | awk
+
+- Buscar más sobre "awk"
+
+- more peliculas.csv
+
+- file peliculas.csv
+
+- contiene:
+
+- 1::Toy Story (1995)::Animation|Children|Comedy
+- 2::JUmanji (1995)::Adventure|Children's|Fantasy
+
+- Comando cat file.ext | awk -F"xx" '{printf("x", $x)}'
+
+- cat peliculas.csv | awk -F"::" '{printf("%s\n", $2)}'
+
+- Titulos de las películas
+
+- Toy Story (1995)
+Jumanji (1995)
+Grumpier Old Men (1995)
+Waiting to Exhale (1995)
+
+
 
 ## 10. Pipe
 
