@@ -371,6 +371,13 @@ rwx: 7
 
 Recuerda que cuando haces `ls -l`, cuando aparezca el listado, podrás ver al comienzo de cada línea cuáles son los permisos. En primer lugar aparecen los permisos del owner (tú), después los del grupo, y finalmente los de todo el mundo.
 
+beco$ chmod 740 3-now.php //cambiar permisos
+ls -l
+
+`which php`
+
+`emacs filename.ext`
+
 #### Retos
 
 ¿Cuáles son los usuarios que alguna vez han sido dados de alta en tu sistema?
