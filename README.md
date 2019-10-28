@@ -220,14 +220,162 @@ Jumanji (1995)
 Grumpier Old Men (1995)
 Waiting to Exhale (1995)
 
-
-
 ## 10. Pipe
+
+Este operador se llama pipe y se escribe con la barra vertical |. Ayuda a anidar operaciones.
+
+[Clase 10](https://platzi.com/clases/1276-terminal/11193-pipe/)
+
+ls -l | wc -l
+
+cat peliculas.csv
+
+cat peliculas.csv | grep Thriller
+
+cat peliculas.csv | grep Thriller | awk -F"::" '{printf("%s\n",$3)}'
+
+cat peliculas.csv | grep Thriller | awk -F"::" '{printf("%s\n",$3)}' | grep -v Comedy
+
+cat peliculas.csv | grep Thriller | awk -F"::" '{printf("%s\n",$3)}' | grep -v Comedy | more
+
+cat peliculas.csv | grep Thriller | awk -F"::" '{printf("%s:%s\n",$2, $3)}' | grep -v Comedy | more
+
+cat peliculas.csv | grep Thriller | awk -F"::" '{printf("%s:%s\n",$2, $3)}' | grep -v Comedy | grep -i heat
 
 ## 11. Crontab - Una herramienta para automatizar tareas de la terminal
 
+[Clase 11](https://platzi.com/clases/1276-terminal/11194-crontab-una-herramienta-para-automatizar-tareas-de/)
+
+### Crontab
+
+Una herramienta para automatizar tareas desde la terminal
+
+Una de las herramientas más potentes de los sistemas UNIX, que nos permite programar la ejecución de diferentes scripts. Con crontab podemos agendar todo lo que necesitemos para facilitar nuestro trabajo y automatizar tareas.
+
+`contrab -l` despliega el crontab que tenemos instalado. Cada una de las primeras 5 columnas que tenemos al correr este comando especifica en qué momento exacto queremos que se ejecute la tarea que vamos a definir en la sexta columna.
+
+`Columna 1: minuto 0-59`
+`Columna 2: hora 0-23`
+`Columna 3: día del mes 1-31`
+`Columna 4: mes 1-12`
+`Columna 5: día de la semana 0-7 (donde 0 y 7 equivalen a domingo)`
+`Columna 6: script o comando que queremos que se ejecute`
+
+```
+minuto 0-59¬
+hora 0-23¬
+dia mes 1-31¬
+mes 1-12¬
+dia semana: 0-7 (0 y 7 domingo)¬
+script/comando¬
+¬
+ejemplo 1 col (min)¬
+1¬
+1,10,18¬
+*/5¬
+1-10¬
+*
+¬
+¬
+*/15    4   *   *   *   script.sh¬
+0       3   *   *   1   script.sh
+```
+
+`crontab -e`
+
+```
+0   16  *   *   *   $HOME/src/cronjobs/daily.sh
+0   *   *   *   *   $HOME/src/cronjobs/hourly.sh
+*   *   *   *   *   $HOME/src/cronjobs/minutely.sh
+*   *   *   *   *   $HOME/src/git/beco/cli/scripts/ejemplos.php
+> ~/src/git/beco/cli/output_cron 2>&1
+```
+
+`contrab -l` listar scripts
+
+`crontab -e` edita las tareas que tengo agendadas. Con la letra i podemos escribir.
+
+Recuerda que el crontab se ejecuta si y solo si la computadora está encendida.
+
 ## 12. Links
+
+[Clase 12](https://platzi.com/clases/1276-terminal/11195-links/)
+
+Hay un problema muy común: a veces nos estamos quedando sin disco duro y no sabemos qué es lo que nos está quitando tanto espacio.
+
+Para ahorrar disco duro podemos crear links simbólicos o alias, con `ln -s`.
+
+Con el comando `du` (disk usage) vamos a saber, a partir del lugar donde estemos, cuánto espacio en disco ocupa cada nodo.
+
+`du -h` disk usage `-h` human readable
+
+`du -h -d 1`
+
+```
+-rw-r--r--@ 1 501  20  5950040 Oct  9 09:57 airport-codes.csv
+-rw-r--r--  1 501  20  1127225 Oct  9 07:20 airports.csv
+-rw-r--r--@ 1 501  20    62204 Oct  9 09:57 lista-de-comandos-mas-usados.pdf
+-rw-r--r--  1 501  20      342 Oct  9 09:46 peliculas.csv
+drwxr-xr-x  5 501  20      160 Oct  9 07:09 sandbox
+-rw-r--r--@ 1 501  20   698367 Oct  9 09:33 varioscsvs.tar.gz
+-rw-r--r--@ 1 501  20   699796 Oct  9 08:14 varioscsvs.zip
+```
+
+`-rw-r--r--@` archivo inicia cn `-`
+`drwxr-xr-x`
+
+Para ahorrar disco duro podemos crear links simbólicos o alias, con ln -s.
 
 ## 13. Usuarios y Permisos
 
+[Clase 13](https://platzi.com/clases/1276-terminal/11196-usuarios-y-permisos/)
+
+En esta clase vamos a entender los diferentes permisos que puede tener cada tipo de usuario dentro de una computadora. La administración de usuarios y permisos cambia mucho entre diferentes sistemas operativos, pero lo que veremos en clase es igual para todos.
+
+### whoami
+
+te dice cuál es el usuario que está operando en ese momento.
+
+### Tipos de permisos
+
+`r–`: permiso de lectura
+`rw-`: permiso de lectura y escritura
+`rwx`: permiso de lectura, escritura y ejecución
+
+Los permisos tiene valores numéricos:
+
+`r = 4`
+`w = 2`
+`x = 1`
+
+Entonces para otorgar permisos debemos darle un número que sea la suma de cada una de estas tres letras.
+
+-: dir/link/file
+rwx: owner
+r--: group
+---: anyone
+
+rwx
+421
+
+r--: 4
+rw-: 6
+r-x: 5
+--x: 1
+-wx: 3
+rwx: 7
+
+---/---/---
+666: rw-rw-rw
+750: rwxr-x---
+
+Recuerda que cuando haces `ls -l`, cuando aparezca el listado, podrás ver al comienzo de cada línea cuáles son los permisos. En primer lugar aparecen los permisos del owner (tú), después los del grupo, y finalmente los de todo el mundo.
+
+#### Retos
+
+¿Cuáles son los usuarios que alguna vez han sido dados de alta en tu sistema?
+Crea un usuario para ejecutar todas tus pruebas de código
+
 ## 14. Que sigue después de aprendar a usar la terminal
+
+[Clase 14](https://platzi.com/clases/1276-terminal/11197-que-sigue-despues-de-aprender-a-usar-la-terminal/)
