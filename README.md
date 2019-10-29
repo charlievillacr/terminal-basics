@@ -386,3 +386,7 @@ Crea un usuario para ejecutar todas tus pruebas de código
 ## 14. Que sigue después de aprendar a usar la terminal
 
 [Clase 14](https://platzi.com/clases/1276-terminal/11197-que-sigue-despues-de-aprender-a-usar-la-terminal/)
+
+Si crees que debería existir una herramienta que automatice u optimice algún proceso dentro de tu computadora, probablemente lo puedes hacer desde la terminal.
+
+El siguiente paso es unir todos estos conceptos con bash scripting, un lenguaje de programación que permite unir todas las power tools con condicionales e iteradores para conseguir resultados mucho más potentes.
